@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-4.3.1/bootstrap-4.3.1/css/bootstrap.css">
+    <title>Your Cart</title>
+    <style>
+        body{
+            font-family: "Times New Roman", Times, serif;
+            
+            background: #343F55;
+        }
+        .row{
+            background: #DAA674;
+            border-radius: 20px;
+           
+        }
+        
+        .col {
+            
+            background: #DAA674;
+            border-radius: 20px;
+        }
+        p{
+            font-weight: bold;
+            text-align: center;
+        }
+        #h{
+            background : cornsilk;
+        }
+    </style>
+</head>
+<body>
+    <div class="container border mt-1 mb-1 parentdiv text-center">
+
+        <div id="h" >
+            <h1 class="text-center">Car</h1>
+            <h1 id="totalsumid" class="text-center"></h1>
+        </div>
+        
+                
+        <div class="row">
+            <div class="col">
+
+    <script>
+        let totalSUM = 0;
+        let container = document.querySelector(".container");
+        let string = localStorage.getItem("carts_array");
+        let inside = JSON.parse(string);
+        for (i in inside){
+                let newDiv = document.createElement("div");
+            
+            let p = document.createElement("p");
+            console.log(inside[i]['car_model']);
+            console.log(inside[i]['car_cost']);
+            console.log(inside[i]['car_Id']);
+            p.innerHTML = `
+                    <div class="col col-lg-3">
+                    <h2 >Model : ${inside[i]['car_model']}</h2> 
+                    <h2> Price : ${inside[i]['car_cost']}</h2>
+                    <h2> Color : ${inside[i]['car_color']}</h2>
+                    <h2> Id : ${inside[i]['car_Id']}</h2></div>
+                   </div>  
+            
+            `
+          let sum = Number(inside[i]['car_cost'])
+            totalSUM+= sum
+            newDiv.appendChild(p);
+            container.appendChild(newDiv);
+            }
+            
+        
+            
+        document.getElementById("totalsumid").textContent = "Total Sum : " + totalSUM;
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-4.3.1/bootstrap-4.3.1/css/bootstrap.css">
+    <style>
+        
+        .form-group{
+            color: #fff;
+            font-size: 22px;
+            font-weight: 600;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .form-control {
+            border: transparent ;
+            border: 1px solid rgba(255, 255, 255, 0.1) ;
+            height: 40px ;
+            background: rgba(255, 248, 220, 0.479);
+            font-size: 12px;
+            border-radius: 0px;
+            color:#fff;
+        }
+        
+        input::placeholder {
+            color: #fff;
+        }
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="#">Car<span>Book</span></a>
+	      <div >
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+	          <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
+	          <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+	          <li class="nav-item"><a href="#" class="nav-link">Cars</a></li>
+	          <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	</nav>
+    <!-- Section -->
+    <section class="ftco-section ftco-no-pt bg-light">
+        <div class="container">
+            <div class="row no-gutters mt-5">
+                <div class="col col-12 d-flex align-items-center">
+                    <div class="container w-350  ftco-animate bg-primary  ">
+                        <div>
+                            <label class="label">Car Model</label>
+                            <select class="form-control" name="model" id="model" placeholder="Accord,Audi Q3 etc">
+                                <option value="Audi">Audi</option>;
+                                <option value="BMW">BMW</option>
+                                <option value="Ford">Ford</option>
+                                <option value="Ferrari">Ferrari</option>
+                            </select>                           
+                        </div>
+                        <div class="form-group">
+                            <label for="color" class="label">Car Color</label><br>
+                            <input type="color" name="color"  class="form-control" id="color">
+                        </div>
+                        <div class="form-group">
+                            <label for="cost" class="label">Cost </label><br>
+                            <input type="number" name="cost" id="cost"  class="form-control" placeholder="30,40,50,60 ...">
+                        </div>
+                        <div class="form-group">
+                            <label for="Id" class="label">Car Id</label>
+                            <input type="number" name="id" id="Id"  class="form-control" placeholder="Car Id">
+                        </div>
+                        <div class="form-group text-center">                            
+			              <input type="submit" value="Rent A Car Now" onclick="add()" class="btn btn-success py-3 px-4">
+                        </div>
+                    </div> 
+                    <div class="col-9 d-flex align-items-center ">
+                        <div class="services-wrap rounded-right w-100">
+                            <h3 class="heading-section mb-4 text-center">Better Way to Rent Your Perfect Cars</h3>
+                            <div class="row d-flex mb-4">
+                        <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+                          <div class="services w-100 text-center">
+                            <div class="icon d-flex align-items-center justify-content-center"><span><i><img src="map.png"></i></span></div>
+                            <div class="text w-100">
+                              <h3 class="heading mb-2">Choose Your Pickup Location</h3>
+                          </div>
+                          </div>      
+                        </div>
+                        <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+                          <div class="services w-100 text-center">
+                            <div class="icon d-flex align-items-center justify-content-center"><span ><i><img src="handshake.jpg"></i></span></div>
+                            <div class="text w-100">
+                              <h3 class="heading mb-2">Select the Best Deal</h3>
+                            </div>
+                          </div>      
+                        </div>
+                        <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+                          <div class="services w-100 text-center">
+                            <div class="icon d-flex align-items-center justify-content-center"><span><i><img src="reserve.png"></i></span></div>
+                            <div class="text w-100">
+                              <h3 class="heading mb-2">Reserve Your Rental Car</h3>
+                            </div>
+                          </div>      
+                        </div>
+                      </div>
+                      <p> <a href="cart.html" class="btn btn-primary py-3 px-4" onclick="show()">
+                        Add to Cart</a> </p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+    <script src="carrental.js">
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-4.3.1/bootstrap-4.3.1/css/bootstrap.css">
+    <style>
+        .container{
+            background: url(car.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        a{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <a href="cart2.html" class="btn btn-success ml-80">Cart Page</a> 
+    <div class="container">
+
+        <div class="row">
+            <div class="col col-3 ">
+                <div class="card-deck d-block">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const arr=[]
+            let container = document.querySelector(".card-deck");
+            let text="";
+            for(let i=0; i<localStorage.length;i++){
+                    let h= JSON.parse(localStorage.getItem(localStorage.key(i)))
+                console.log(h)
+                let newDiv= document.createElement("div");
+                let p = document.createElement("p");
+                p.innerHTML = `
+                            <div class="card text-center ">
+                                <div class="row">
+                                    <div class="col col-lg-11 d-inline">
+                                        <h3 class="card-title" id="title">${h[0].model}</h3>
+                                        <p class="card-text ">Color:<span  id="color">${h[0].color}</span></p>  
+                                        <p class="card-text">Cost:$<span  id="cost">${h[0].cost}</span></p>  
+                                        <p class="card-text" >Id:<span id="Id">${h[0].Id}</span></p>  
+                                        <button class="btn btn-secondary " onclick="add()" >Add to Cart</button>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        
+                `
+                
+                newDiv.appendChild(p);
+                container.appendChild(newDiv);
+         
+                }
+                                                
+                for(let i=1 ; i<=localStorage.length;i++){
+                    
+                    console.log(JSON.parse(localStorage.getItem(localStorage.key(i)))[0].model)
+                   
+                        let ob={
+                    car_model: JSON.parse(localStorage.getItem(localStorage.key(i)))[0].model,
+                    car_color:  JSON.parse(localStorage.getItem(localStorage.key(i)))[0].color,
+                    car_cost:  JSON.parse(localStorage.getItem(localStorage.key(i)))[0].cost,
+                    car_Id:  JSON.parse(localStorage.getItem(localStorage.key(i)))[0].Id,
+                    }
+                    arr.push(ob)
+                    let bj = JSON.stringify(arr);
+                    localStorage.setItem("carts_array", bj);
+
+                    
+    
+     
+}
+             
+               
+            
+                
+            
+    </script>
+</body>
+</html>
